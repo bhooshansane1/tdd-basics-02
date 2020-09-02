@@ -4,11 +4,13 @@ namespace ConsoleCalculator.App
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
             var calc = new Calculator();
             ConsoleKeyInfo key;
+            Console.WriteLine("0");
             Console.WriteLine("Press Ctrl + C to close the program.");
+            
             while (IsKillSwitch(key = Console.ReadKey(true)) == false)
             {
                 Console.Clear();
@@ -18,7 +20,7 @@ namespace ConsoleCalculator.App
 
         private static bool IsKillSwitch(ConsoleKeyInfo key)
         {
-            return key.Key == ConsoleKey.C && key.Modifiers == ConsoleModifiers.Control;
+            return key.Key == ConsoleKey.X && key.Modifiers == ConsoleModifiers.Control;
         }
     }
 }
