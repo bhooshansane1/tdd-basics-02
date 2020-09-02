@@ -94,6 +94,17 @@ namespace ConsoleCalculator.Tests
         [Fact]
         public void Math_Operator_At_Last_Test()
         {
+            cal.SendKeyPress('C');
+            cal.SendKeyPress('1');
+            cal.SendKeyPress('+');
+            cal.SendKeyPress('2');
+            cal.SendKeyPress('+');
+            cal.SendKeyPress('3');
+            cal.SendKeyPress('+');
+
+            Assert.Equal("12", cal.SendKeyPress('='));
+
+            cal.SendKeyPress('C');
             cal.SendKeyPress('1');
             cal.SendKeyPress('+');
             cal.SendKeyPress('2');
@@ -102,6 +113,26 @@ namespace ConsoleCalculator.Tests
             cal.SendKeyPress('-');
 
             Assert.Equal("0", cal.SendKeyPress('='));
+
+            cal.SendKeyPress('C');
+            cal.SendKeyPress('1');
+            cal.SendKeyPress('+');
+            cal.SendKeyPress('2');
+            cal.SendKeyPress('+');
+            cal.SendKeyPress('3');
+            cal.SendKeyPress('x');
+
+            Assert.Equal("36", cal.SendKeyPress('='));
+
+            cal.SendKeyPress('C');
+            cal.SendKeyPress('1');
+            cal.SendKeyPress('+');
+            cal.SendKeyPress('2');
+            cal.SendKeyPress('+');
+            cal.SendKeyPress('3');
+            cal.SendKeyPress('/');
+
+            Assert.Equal("1", cal.SendKeyPress('='));
         }
 
     }
